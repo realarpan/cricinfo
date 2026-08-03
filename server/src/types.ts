@@ -1,0 +1,1 @@
+export type CricketMatch = { id:string; name:string; matchType?:string; status:string; date?:string; venue?:string; teams:string[]; teamInfo?:{name:string;shortname?:string;img?:string}[]; score?:{r:number;w:number;o:number;inning:string}[] };

@@ -1,0 +1,490 @@
+0 verbose cli C:\Program Files\nodejs\node.exe C:\Program Files\nodejs\node_modules\npm\bin\npm-cli.js
+1 info using npm@11.10.1
+2 info using node@v25.7.0
+3 silly config load:file:C:\Program Files\nodejs\node_modules\npm\npmrc
+4 silly config load:file:C:\Users\Admn\Documents\Codex\2026-08-02\build-a-complete-live-cricket-website\.npmrc
+5 silly config load:file:C:\Users\Admn\.npmrc
+6 silly config load:file:C:\Users\Admn\AppData\Roaming\npm\etc\npmrc
+7 verbose title npm install
+8 verbose argv "install" "--cache" ".\\work\\npm-cache" "--no-audit" "--no-fund"
+9 verbose logfile logs-max:10 dir:C:\Users\Admn\Documents\Codex\2026-08-02\build-a-complete-live-cricket-website\work\npm-cache\_logs\2026-08-02T16_42_50_648Z-
+10 verbose logfile C:\Users\Admn\Documents\Codex\2026-08-02\build-a-complete-live-cricket-website\work\npm-cache\_logs\2026-08-02T16_42_50_648Z-debug-0.log
+11 silly logfile done cleaning log files
+12 silly packumentCache heap:2348810240 maxSize:587202560 maxEntrySize:293601280
+13 silly idealTree buildDeps
+14 silly reify mark retired [
+14 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\acorn',
+14 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\acorn',
+14 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\acorn.cmd',
+14 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\acorn.ps1'
+14 silly reify ]
+15 silly reify mark retired [
+15 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\autoprefixer',
+15 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\autoprefixer',
+15 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\autoprefixer.cmd',
+15 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\autoprefixer.ps1'
+15 silly reify ]
+16 silly reify mark retired [
+16 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\baseline-browser-mapping',
+16 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\baseline-browser-mapping',
+16 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\baseline-browser-mapping.cmd',
+16 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\baseline-browser-mapping.ps1'
+16 silly reify ]
+17 silly reify mark retired [
+17 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\browserslist',
+17 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\browserslist',
+17 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\browserslist.cmd',
+17 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\browserslist.ps1'
+17 silly reify ]
+18 silly reify mark retired [
+18 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\concurrently',
+18 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\concurrently',
+18 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\concurrently.cmd',
+18 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\concurrently.ps1',
+18 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\conc',
+18 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\conc.cmd',
+18 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\conc.ps1'
+18 silly reify ]
+19 silly reify mark retired [
+19 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\cssesc',
+19 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\cssesc',
+19 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\cssesc.cmd',
+19 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\cssesc.ps1'
+19 silly reify ]
+20 silly reify mark retired [
+20 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\esbuild',
+20 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\esbuild',
+20 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\esbuild.cmd',
+20 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\esbuild.ps1'
+20 silly reify ]
+21 silly reify mark retired [
+21 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\eslint',
+21 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\eslint',
+21 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\eslint.cmd',
+21 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\eslint.ps1'
+21 silly reify ]
+22 silly reify mark retired [
+22 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\husky',
+22 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\husky',
+22 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\husky.cmd',
+22 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\husky.ps1'
+22 silly reify ]
+23 silly reify mark retired [
+23 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\js-yaml',
+23 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\js-yaml',
+23 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\js-yaml.cmd',
+23 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\js-yaml.ps1'
+23 silly reify ]
+24 silly reify mark retired [
+24 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\jiti',
+24 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jiti',
+24 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jiti.cmd',
+24 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jiti.ps1'
+24 silly reify ]
+25 silly reify mark retired [
+25 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\jsesc',
+25 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jsesc',
+25 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jsesc.cmd',
+25 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jsesc.ps1'
+25 silly reify ]
+26 silly reify mark retired [
+26 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\json5',
+26 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\json5',
+26 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\json5.cmd',
+26 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\json5.ps1'
+26 silly reify ]
+27 silly reify mark retired [
+27 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\mime',
+27 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\mime',
+27 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\mime.cmd',
+27 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\mime.ps1'
+27 silly reify ]
+28 silly reify mark retired [
+28 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\nanoid',
+28 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\nanoid',
+28 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\nanoid.cmd',
+28 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\nanoid.ps1'
+28 silly reify ]
+29 silly reify mark retired [
+29 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\prettier',
+29 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\prettier',
+29 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\prettier.cmd',
+29 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\prettier.ps1'
+29 silly reify ]
+30 silly reify mark retired [
+30 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\resolve',
+30 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\resolve',
+30 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\resolve.cmd',
+30 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\resolve.ps1'
+30 silly reify ]
+31 silly reify mark retired [
+31 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\rollup',
+31 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\rollup',
+31 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\rollup.cmd',
+31 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\rollup.ps1'
+31 silly reify ]
+32 silly reify mark retired [
+32 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\semver',
+32 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\semver',
+32 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\semver.cmd',
+32 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\semver.ps1'
+32 silly reify ]
+33 silly reify mark retired [
+33 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\tailwindcss',
+33 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwind',
+33 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwind.cmd',
+33 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwind.ps1',
+33 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwindcss',
+33 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwindcss.cmd',
+33 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwindcss.ps1'
+33 silly reify ]
+34 silly reify mark retired [
+34 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\sucrase',
+34 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase',
+34 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase.cmd',
+34 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase.ps1',
+34 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase-node',
+34 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase-node.cmd',
+34 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase-node.ps1'
+34 silly reify ]
+35 silly reify mark retired [
+35 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\tree-kill',
+35 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tree-kill',
+35 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tree-kill.cmd',
+35 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tree-kill.ps1'
+35 silly reify ]
+36 silly reify mark retired [
+36 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\tsx',
+36 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsx',
+36 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsx.cmd',
+36 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsx.ps1'
+36 silly reify ]
+37 silly reify mark retired [
+37 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\typescript',
+37 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsc',
+37 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsc.cmd',
+37 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsc.ps1',
+37 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsserver',
+37 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsserver.cmd',
+37 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsserver.ps1'
+37 silly reify ]
+38 silly reify mark retired [
+38 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\update-browserslist-db',
+38 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\update-browserslist-db',
+38 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\update-browserslist-db.cmd',
+38 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\update-browserslist-db.ps1'
+38 silly reify ]
+39 silly reify mark retired [
+39 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\vite',
+39 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\vite',
+39 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\vite.cmd',
+39 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\vite.ps1'
+39 silly reify ]
+40 silly reify mark retired [
+40 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\which',
+40 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\node-which',
+40 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\node-which.cmd',
+40 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\node-which.ps1'
+40 silly reify ]
+41 silly reify mark retired [
+41 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@babel\\parser',
+41 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\parser',
+41 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\parser.cmd',
+41 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\parser.ps1'
+41 silly reify ]
+42 silly reify mark retired [
+42 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\semver',
+42 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\semver',
+42 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\semver.cmd',
+42 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\semver.ps1'
+42 silly reify ]
+43 silly reify moves {
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\acorn': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.acorn-uK8uobaw',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\acorn': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.acorn-Gc6vRzh0',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\acorn.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.acorn.cmd-5gBGi4he',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\acorn.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.acorn.ps1-dLkiJCgt',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\autoprefixer': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.autoprefixer-wxgSMPtC',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\autoprefixer': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.autoprefixer-hTbgB822',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\autoprefixer.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.autoprefixer.cmd-rQ1exucp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\autoprefixer.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.autoprefixer.ps1-nh2o0i3M',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\baseline-browser-mapping': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.baseline-browser-mapping-IsC65xu9',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\baseline-browser-mapping': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.baseline-browser-mapping-25TCQP2W',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\baseline-browser-mapping.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.baseline-browser-mapping.cmd-b76ZR1la',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\baseline-browser-mapping.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.baseline-browser-mapping.ps1-peyv4uY6',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\browserslist': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.browserslist-QS6wLfvf',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\browserslist': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.browserslist-Fg8aVewa',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\browserslist.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.browserslist.cmd-AMbzEBvN',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\browserslist.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.browserslist.ps1-0p4xs1Ed',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\concurrently': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.concurrently-jRZVYN81',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\concurrently': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.concurrently-rJ2XuUK8',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\concurrently.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.concurrently.cmd-QRi3KnjZ',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\concurrently.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.concurrently.ps1-IYb5nhif',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\conc': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.conc-iU48Cpbr',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\conc.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.conc.cmd-f2rIQiBI',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\conc.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.conc.ps1-yRmdc84q',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\cssesc': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.cssesc-ltiDOti2',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\cssesc': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.cssesc-l7lW7j2k',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\cssesc.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.cssesc.cmd-Ek3qX896',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\cssesc.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.cssesc.ps1-FUkepnEc',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\esbuild': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.esbuild-ic57MVKL',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\esbuild': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.esbuild-CPc5ZWXZ',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\esbuild.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.esbuild.cmd-fh30aU2q',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\esbuild.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.esbuild.ps1-q1IazHh2',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\eslint': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.eslint-1r64RWEg',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\eslint': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.eslint-TuomkRdp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\eslint.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.eslint.cmd-MXzrhjru',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\eslint.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.eslint.ps1-55fmNZ2u',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\husky': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.husky-1FjoRZZM',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\husky': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.husky-Mmxnpc9S',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\husky.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.husky.cmd-oF3jG42y',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\husky.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.husky.ps1-2YOa5nzz',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\js-yaml': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.js-yaml-O5gBHeRi',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\js-yaml': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.js-yaml-5Qo7EYHg',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\js-yaml.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.js-yaml.cmd-5zSg2ae4',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\js-yaml.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.js-yaml.ps1-QHFbIh5e',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\jiti': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.jiti-anu9lae5',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jiti': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.jiti-y3Vj74EZ',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jiti.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.jiti.cmd-e15Wq556',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jiti.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.jiti.ps1-BSv4UB1I',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\jsesc': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.jsesc-72o8RBZo',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jsesc': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.jsesc-VKxfENss',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jsesc.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.jsesc.cmd-g5JrgpI2',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\jsesc.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.jsesc.ps1-RuBA4Nkz',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\json5': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.json5-DGa0ooV3',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\json5': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.json5-GO39bk9K',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\json5.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.json5.cmd-CcqEBgBm',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\json5.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.json5.ps1-QimSeAYr',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\mime': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.mime-busO0gan',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\mime': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.mime-GmUmA5hY',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\mime.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.mime.cmd-9PI2w6g1',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\mime.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.mime.ps1-XvTmSlrE',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\nanoid': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.nanoid-3FZdPfzT',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\nanoid': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.nanoid-CUYObMjV',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\nanoid.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.nanoid.cmd-TLheyvwl',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\nanoid.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.nanoid.ps1-yWzLZPy2',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\prettier': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.prettier-oeNYZ9Ba',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\prettier': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.prettier-NAq6qWzD',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\prettier.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.prettier.cmd-z34XmlpB',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\prettier.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.prettier.ps1-sGgN69PT',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\resolve': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.resolve-WCBQRmBh',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\resolve': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.resolve-5ZhGd36U',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\resolve.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.resolve.cmd-dOyCOsuS',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\resolve.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.resolve.ps1-r8aJekPe',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\rollup': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.rollup-rdxoS9hp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\rollup': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.rollup-gX8tOP3L',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\rollup.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.rollup.cmd-WJndefGp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\rollup.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.rollup.ps1-KqF0piy1',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\semver': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.semver-5zc9XAUd',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\semver': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.semver-kvMuumJB',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\semver.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.semver.cmd-LioFf8sf',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\semver.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.semver.ps1-ccPwxZPp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\tailwindcss': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.tailwindcss-wB5E8MzJ',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwind': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tailwind-aif0Qec8',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwind.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tailwind.cmd-IMayeCyp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwind.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tailwind.ps1-u2ijOwQo',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwindcss': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tailwindcss-bjPEfIEU',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwindcss.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tailwindcss.cmd-FhqfC268',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tailwindcss.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tailwindcss.ps1-fbCGr7Bo',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\sucrase': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.sucrase-0K5pyGaY',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.sucrase-GMpyc5ka',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.sucrase.cmd-WAHgIlMv',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.sucrase.ps1-TZ9iaUcC',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase-node': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.sucrase-node-Znx6IRYT',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase-node.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.sucrase-node.cmd-FvZVCNGJ',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\sucrase-node.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.sucrase-node.ps1-RPQxiJDd',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\tree-kill': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.tree-kill-WWBYeDF9',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tree-kill': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tree-kill-KeKw9227',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tree-kill.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tree-kill.cmd-CqpC2U35',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tree-kill.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tree-kill.ps1-eUXkewjO',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\tsx': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.tsx-6os5ZYEf',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsx': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsx-YGftqEPe',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsx.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsx.cmd-4mSmusK1',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsx.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsx.ps1-nAuB3hfm',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\typescript': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.typescript-XkMNvcbZ',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsc': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsc-v6Xdukys',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsc.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsc.cmd-i3zJB3oi',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsc.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsc.ps1-FAPYoBtr',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsserver': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsserver-te2Wrhd9',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsserver.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsserver.cmd-vhBbNbEz',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\tsserver.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.tsserver.ps1-2CENcRLk',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\update-browserslist-db': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.update-browserslist-db-SqOiQK4A',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\update-browserslist-db': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.update-browserslist-db-sD0SWati',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\update-browserslist-db.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.update-browserslist-db.cmd-hQoAaXiD',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\update-browserslist-db.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.update-browserslist-db.ps1-oeac4BxK',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\vite': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.vite-fbPXZH0f',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\vite': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.vite-OhAs159u',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\vite.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.vite.cmd-X1N7ry7e',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\vite.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.vite.ps1-RRM9vls1',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\which': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.which-M8Q6EViO',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\node-which': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.node-which-k0ad0NZp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\node-which.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.node-which.cmd-PyFYw87x',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\node-which.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.node-which.ps1-AudjSzey',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@babel\\parser': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@babel\\.parser-ARZnhxpu',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\parser': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.parser-EMyk0mLe',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\parser.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.parser.cmd-FlDYcYPH',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\parser.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\.bin\\.parser.ps1-8tnXLOHS',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\semver': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.semver-9i0yPmN9',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\semver': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\.semver-Czw9uHjp',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\semver.cmd': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\.semver.cmd-IbbLnYn7',
+43 silly reify   'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\semver.ps1': 'C:\\Users\\Admn\\Documents\\Codex\\2026-08-02\\build-a-complete-live-cricket-website\\node_modules\\@typescript-eslint\\typescript-estree\\node_modules\\.bin\\.semver.ps1-zJsAlM9V'
+43 silly reify }
+44 silly packumentCache corgi:https://registry.npmjs.org/@babel%2fparser cache-miss
+45 silly packumentCache corgi:https://registry.npmjs.org/which cache-miss
+46 silly packumentCache corgi:https://registry.npmjs.org/vite cache-miss
+47 silly packumentCache corgi:https://registry.npmjs.org/update-browserslist-db cache-miss
+48 silly packumentCache corgi:https://registry.npmjs.org/tsx cache-miss
+49 silly packumentCache corgi:https://registry.npmjs.org/typescript cache-miss
+50 silly packumentCache corgi:https://registry.npmjs.org/tree-kill cache-miss
+51 silly packumentCache corgi:https://registry.npmjs.org/sucrase cache-miss
+52 silly packumentCache corgi:https://registry.npmjs.org/tailwindcss cache-miss
+53 silly packumentCache corgi:https://registry.npmjs.org/semver cache-miss
+54 silly packumentCache corgi:https://registry.npmjs.org/rollup cache-miss
+55 silly packumentCache corgi:https://registry.npmjs.org/resolve cache-miss
+56 silly packumentCache corgi:https://registry.npmjs.org/prettier cache-miss
+57 silly packumentCache corgi:https://registry.npmjs.org/mime cache-miss
+58 silly packumentCache corgi:https://registry.npmjs.org/nanoid cache-miss
+59 silly packumentCache corgi:https://registry.npmjs.org/json5 cache-miss
+60 silly packumentCache corgi:https://registry.npmjs.org/jsesc cache-miss
+61 silly packumentCache corgi:https://registry.npmjs.org/js-yaml cache-miss
+62 silly packumentCache corgi:https://registry.npmjs.org/jiti cache-miss
+63 silly packumentCache corgi:https://registry.npmjs.org/husky cache-miss
+64 silly packumentCache corgi:https://registry.npmjs.org/eslint cache-miss
+65 silly packumentCache corgi:https://registry.npmjs.org/esbuild cache-miss
+66 silly packumentCache corgi:https://registry.npmjs.org/cssesc cache-miss
+67 silly packumentCache corgi:https://registry.npmjs.org/concurrently cache-miss
+68 silly packumentCache corgi:https://registry.npmjs.org/browserslist cache-miss
+69 silly packumentCache corgi:https://registry.npmjs.org/baseline-browser-mapping cache-miss
+70 silly packumentCache corgi:https://registry.npmjs.org/autoprefixer cache-miss
+71 silly packumentCache corgi:https://registry.npmjs.org/acorn cache-miss
+72 silly packumentCache corgi:https://registry.npmjs.org/semver cache-miss
+73 silly packumentCache corgi:https://registry.npmjs.org/esbuild cache-miss
+74 http fetch GET 200 https://registry.npmjs.org/json5 1596ms (cache miss)
+75 silly packumentCache corgi:https://registry.npmjs.org/json5 set size:undefined disposed:false
+76 http fetch GET 200 https://registry.npmjs.org/which 1623ms (cache miss)
+77 silly packumentCache corgi:https://registry.npmjs.org/which set size:undefined disposed:false
+78 http fetch GET 200 https://registry.npmjs.org/update-browserslist-db 1629ms (cache miss)
+79 silly packumentCache corgi:https://registry.npmjs.org/update-browserslist-db set size:undefined disposed:false
+80 http fetch GET 200 https://registry.npmjs.org/tree-kill 1642ms (cache miss)
+81 silly packumentCache corgi:https://registry.npmjs.org/tree-kill set size:undefined disposed:false
+82 http fetch GET 200 https://registry.npmjs.org/mime 1639ms (cache miss)
+83 silly packumentCache corgi:https://registry.npmjs.org/mime set size:undefined disposed:false
+84 http fetch GET 200 https://registry.npmjs.org/jsesc 1654ms (cache miss)
+85 silly packumentCache corgi:https://registry.npmjs.org/jsesc set size:undefined disposed:false
+86 http fetch GET 200 https://registry.npmjs.org/cssesc 1662ms (cache miss)
+87 silly packumentCache corgi:https://registry.npmjs.org/cssesc set size:undefined disposed:false
+88 http fetch GET 200 https://registry.npmjs.org/js-yaml 1748ms (cache miss)
+89 silly packumentCache corgi:https://registry.npmjs.org/js-yaml set size:undefined disposed:false
+90 http fetch GET 200 https://registry.npmjs.org/semver 1770ms (cache miss)
+91 silly packumentCache corgi:https://registry.npmjs.org/semver set size:undefined disposed:false
+92 http fetch GET 200 https://registry.npmjs.org/resolve 1779ms (cache miss)
+93 silly packumentCache corgi:https://registry.npmjs.org/resolve set size:undefined disposed:false
+94 http fetch GET 200 https://registry.npmjs.org/concurrently 1775ms (cache miss)
+95 silly packumentCache corgi:https://registry.npmjs.org/concurrently set size:undefined disposed:false
+96 http cache https://registry.npmjs.org/json5/-/json5-2.2.3.tgz 185ms (cache hit)
+97 http cache https://registry.npmjs.org/which/-/which-2.0.2.tgz 178ms (cache hit)
+98 http cache https://registry.npmjs.org/update-browserslist-db/-/update-browserslist-db-1.2.3.tgz 171ms (cache hit)
+99 http fetch GET 200 https://registry.npmjs.org/tsx 1833ms (cache miss)
+100 silly packumentCache corgi:https://registry.npmjs.org/tsx set size:undefined disposed:false
+101 http fetch GET 200 https://registry.npmjs.org/sucrase 1845ms (cache miss)
+102 silly packumentCache corgi:https://registry.npmjs.org/sucrase set size:undefined disposed:false
+103 http cache https://registry.npmjs.org/tree-kill/-/tree-kill-1.2.2.tgz 224ms (cache hit)
+104 http cache https://registry.npmjs.org/mime/-/mime-1.6.0.tgz 220ms (cache hit)
+105 http cache https://registry.npmjs.org/jsesc/-/jsesc-3.1.0.tgz 211ms (cache hit)
+106 http cache https://registry.npmjs.org/cssesc/-/cssesc-3.0.0.tgz 226ms (cache hit)
+107 http fetch GET 200 https://registry.npmjs.org/nanoid 1934ms (cache miss)
+108 silly packumentCache corgi:https://registry.npmjs.org/nanoid set size:undefined disposed:false
+109 http fetch GET 200 https://registry.npmjs.org/prettier 1965ms (cache miss)
+110 silly packumentCache corgi:https://registry.npmjs.org/prettier set size:undefined disposed:false
+111 http cache https://registry.npmjs.org/js-yaml/-/js-yaml-4.3.1.tgz 250ms (cache hit)
+112 http cache https://registry.npmjs.org/semver/-/semver-6.3.1.tgz 270ms (cache hit)
+113 http fetch GET 200 https://registry.npmjs.org/semver 2030ms (cache miss)
+114 silly packumentCache corgi:https://registry.npmjs.org/semver set size:undefined disposed:false
+115 http cache https://registry.npmjs.org/resolve/-/resolve-1.22.12.tgz 269ms (cache hit)
+116 http cache https://registry.npmjs.org/concurrently/-/concurrently-9.2.4.tgz 269ms (cache hit)
+117 http fetch GET 200 https://registry.npmjs.org/jiti 2061ms (cache miss)
+118 silly packumentCache corgi:https://registry.npmjs.org/jiti set size:undefined disposed:false
+119 http cache https://registry.npmjs.org/tsx/-/tsx-4.23.4.tgz 295ms (cache hit)
+120 http cache https://registry.npmjs.org/sucrase/-/sucrase-3.35.1.tgz 293ms (cache hit)
+121 http fetch GET 200 https://registry.npmjs.org/baseline-browser-mapping 2162ms (cache miss)
+122 silly packumentCache corgi:https://registry.npmjs.org/baseline-browser-mapping set size:undefined disposed:false
+123 http cache https://registry.npmjs.org/nanoid/-/nanoid-3.3.16.tgz 259ms (cache hit)
+124 http fetch GET 200 https://registry.npmjs.org/@babel%2fparser 2235ms (cache miss)
+125 silly packumentCache corgi:https://registry.npmjs.org/@babel%2fparser set size:undefined disposed:false
+126 http cache https://registry.npmjs.org/semver/-/semver-7.8.5.tgz 226ms (cache hit)
+127 http cache https://registry.npmjs.org/jiti/-/jiti-1.21.7.tgz 223ms (cache hit)
+128 http fetch GET 200 https://registry.npmjs.org/acorn 2317ms (cache miss)
+129 silly packumentCache corgi:https://registry.npmjs.org/acorn set size:undefined disposed:false
+130 http fetch GET 200 https://registry.npmjs.org/autoprefixer 2323ms (cache miss)
+131 silly packumentCache corgi:https://registry.npmjs.org/autoprefixer set size:undefined disposed:false
+132 http fetch GET 200 https://registry.npmjs.org/browserslist 2336ms (cache miss)
+133 silly packumentCache corgi:https://registry.npmjs.org/browserslist set size:undefined disposed:false
+134 http cache https://registry.npmjs.org/baseline-browser-mapping/-/baseline-browser-mapping-2.11.11.tgz 226ms (cache hit)
+135 http fetch GET 200 https://registry.npmjs.org/husky 2425ms (cache miss)
+136 silly packumentCache corgi:https://registry.npmjs.org/husky set size:undefined disposed:false
+137 http cache https://registry.npmjs.org/acorn/-/acorn-8.18.0.tgz 208ms (cache hit)
+138 http cache https://registry.npmjs.org/autoprefixer/-/autoprefixer-10.5.4.tgz 208ms (cache hit)
+139 http cache https://registry.npmjs.org/browserslist/-/browserslist-4.28.7.tgz 201ms (cache hit)
+140 http fetch GET 200 https://registry.npmjs.org/@babel/parser/-/parser-7.29.8.tgz 1083ms (cache revalidated)
+141 http cache https://registry.npmjs.org/husky/-/husky-9.1.7.tgz 918ms (cache hit)
+142 http cache https://registry.npmjs.org/prettier/-/prettier-3.9.6.tgz 1576ms (cache hit)
+143 http fetch GET 200 https://registry.npmjs.org/eslint 3559ms (cache miss)
+144 silly packumentCache corgi:https://registry.npmjs.org/eslint set size:undefined disposed:false
+145 http fetch GET 200 https://registry.npmjs.org/esbuild 3854ms (cache miss)
+146 silly packumentCache corgi:https://registry.npmjs.org/esbuild set size:undefined disposed:false
+147 http cache https://registry.npmjs.org/eslint/-/eslint-9.39.5.tgz 392ms (cache hit)
+148 http fetch GET 200 https://registry.npmjs.org/esbuild 4073ms (cache miss)
+149 silly packumentCache corgi:https://registry.npmjs.org/esbuild set size:undefined disposed:false
+150 http cache https://registry.npmjs.org/esbuild/-/esbuild-0.28.1.tgz 494ms (cache hit)
+151 http cache https://registry.npmjs.org/esbuild/-/esbuild-0.25.12.tgz 306ms (cache hit)
+152 http fetch GET 200 https://registry.npmjs.org/vite 10086ms (cache miss)
+153 silly packumentCache corgi:https://registry.npmjs.org/vite set size:undefined disposed:false
+154 http cache https://registry.npmjs.org/vite/-/vite-6.4.3.tgz 496ms (cache hit)
+155 http fetch GET 200 https://registry.npmjs.org/rollup 11059ms (cache miss)
+156 silly packumentCache corgi:https://registry.npmjs.org/rollup set size:undefined disposed:false
+157 http cache https://registry.npmjs.org/rollup/-/rollup-4.62.4.tgz 770ms (cache hit)
+158 http fetch GET 200 https://registry.npmjs.org/tailwindcss 13771ms (cache miss)
+159 silly packumentCache corgi:https://registry.npmjs.org/tailwindcss set size:undefined disposed:false
+160 http cache https://registry.npmjs.org/tailwindcss/-/tailwindcss-3.4.19.tgz 126ms (cache hit)
+161 http fetch GET 200 https://registry.npmjs.org/typescript 14944ms (cache miss)
+162 silly packumentCache corgi:https://registry.npmjs.org/typescript set size:undefined disposed:false
+163 http cache https://registry.npmjs.org/typescript/-/typescript-5.7.3.tgz 1023ms (cache hit)
+164 info run esbuild@0.28.1 postinstall node_modules/esbuild node install.js
+165 info run esbuild@0.25.12 postinstall node_modules/vite/node_modules/esbuild node install.js
+166 info run esbuild@0.25.12 postinstall { code: 0, signal: null }
+167 info run esbuild@0.28.1 postinstall { code: 0, signal: null }
+168 silly CHANGE node_modules/@typescript-eslint/typescript-estree/node_modules/semver
+169 silly CHANGE node_modules/@babel/parser
+170 silly CHANGE node_modules/which
+171 silly CHANGE node_modules/vite
+172 silly CHANGE node_modules/vite/node_modules/esbuild
+173 silly CHANGE node_modules/update-browserslist-db
+174 silly CHANGE node_modules/typescript
+175 silly CHANGE node_modules/tsx
+176 silly CHANGE node_modules/tree-kill
+177 silly CHANGE node_modules/sucrase
+178 silly CHANGE node_modules/tailwindcss
+179 silly CHANGE node_modules/semver
+180 silly CHANGE node_modules/rollup
+181 silly CHANGE node_modules/resolve
+182 silly CHANGE node_modules/prettier
+183 silly CHANGE node_modules/nanoid
+184 silly CHANGE node_modules/mime
+185 silly CHANGE node_modules/json5
+186 silly CHANGE node_modules/jsesc
+187 silly CHANGE node_modules/jiti
+188 silly CHANGE node_modules/js-yaml
+189 silly CHANGE node_modules/husky
+190 silly CHANGE node_modules/eslint
+191 silly CHANGE node_modules/esbuild
+192 silly CHANGE node_modules/cssesc
+193 silly CHANGE node_modules/concurrently
+194 silly CHANGE node_modules/browserslist
+195 silly CHANGE node_modules/baseline-browser-mapping
+196 silly CHANGE node_modules/autoprefixer
+197 silly CHANGE node_modules/acorn
+198 verbose cwd C:\Users\Admn\Documents\Codex\2026-08-02\build-a-complete-live-cricket-website
+199 verbose os Windows_NT 10.0.21996
+200 verbose node v25.7.0
+201 verbose npm  v11.10.1
+202 verbose exit 0
+203 info ok

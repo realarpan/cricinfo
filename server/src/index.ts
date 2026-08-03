@@ -1,0 +1,13 @@
+import 'dotenv/config';import express from 'express';import cors from 'cors';import helmet from 'helmet';import morgan from 'morgan';import rateLimit from 'express-rate-limit';import {z} from 'zod';import {cricket} from './services/cricket.js';import {content} from './services/content.js';
+const app=express();app.use(helmet());app.use(cors({origin:process.env.CLIENT_URL?.split(',')||true}));app.use(express.json({limit:'100kb'}));app.use(morgan('tiny'));app.use('/api',rateLimit({windowMs:60_000,max:120}));
+app.get('/health',(_req,res)=>res.json({status:'ok'}));
+app.get('/api/matches',async(req,res,next)=>{try{const matches=await cricket.matches();const status=String(req.query.status||'all').toLowerCase();res.json(status==='all'?matches:matches.filter(m=>m.status.toLowerCase().includes(status)))}catch(e){next(e)}});
+app.get('/api/matches/:id',async(req,res,next)=>{try{res.json(await cricket.match(req.params.id))}catch(e){next(e)}});
+app.get('/api/news',async(_req,res,next)=>{try{res.json(await content.news())}catch(e){next(e)}});
+app.get('/api/rankings',async(_req,res,next)=>{try{res.json(await cricket.rankings())}catch(e){next(e)}});
+app.get('/api/search',async(req,res,next)=>{try{const q=z.string().min(2).max(60).parse(req.query.q);res.json(await content.search(q))}catch(e){next(e)}});
+app.get('/api/teams/:slug',(req,res)=>res.json({name:req.params.slug.replaceAll('-',' '),fixtures:[],results:[],squad:[]}));
+app.get('/sitemap.xml',(_req,res)=>res.type('application/xml').send('<?xml version="1.0" encoding="UTF-8"?><urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url><loc>https://stumpstream.example/</loc></url><url><loc>https://stumpstream.example/news</loc></url></urlset>'));
+app.get('/rss.xml',async(_req,res,next)=>{try{const news=await content.news();const items=news.map(n=>`<item><title><![CDATA[${n.title}]]></title><description><![CDATA[${n.summary||''}]]></description><guid>${n.id}</guid><pubDate>${n.published_at}</pubDate></item>`).join('');res.type('application/rss+xml').send(`<?xml version="1.0"?><rss version="2.0"><channel><title>StumpStream</title><link>https://stumpstream.example</link><description>Cricket news</description>${items}</channel></rss>`)}catch(e){next(e)}});
+app.use((err:unknown,_req:express.Request,res:express.Response,next:express.NextFunction)=>{void next;const msg=err instanceof Error?err.message:'Unexpected error';res.status(msg.includes('configured')?503:400).json({error:msg})});
+app.listen(Number(process.env.PORT||4000),()=>console.log(`API ready on :${process.env.PORT||4000}`));
