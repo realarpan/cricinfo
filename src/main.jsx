@@ -42,7 +42,8 @@ function scoreText(score) {
 }
 function App() {
   const [matches, setMatches] = useState(demo.matches);
-  const [source, setSource] = useState("demo");
+  const [source, setSource] = useState("loading");
+  const [apiError, setApiError] = useState("");
   const [selected, setSelected] = useState(0);
   const [tab, setTab] = useState("commentary");
   const [dark, setDark] = useState(false);
@@ -57,15 +58,16 @@ function App() {
       const response = await fetch("/api/live");
       const payload = await response.json();
       if (!response.ok) throw new Error(payload.error || "Could not load scores");
-      if (Array.isArray(payload.matches) && payload.matches.length) {
-        setMatches(payload.matches);
-        setSource(payload.source || "demo");
-        setSelected((current) => Math.min(current, payload.matches.length - 1));
-      }
+      if (!Array.isArray(payload.matches)) throw new Error("The score service returned an unexpected response.");
+      setMatches(payload.matches);
+      setSource(payload.source || "cricketdata");
+      setApiError(payload.matches.length ? "" : "No current matches are listed by the cricket provider right now.");
+      setSelected((current) => Math.min(current, Math.max(0, payload.matches.length - 1)));
       setUpdated(new Date());
-    } catch {
-      setSource("demo");
-      setMatches(demo.matches);
+    } catch (error) {
+      setSource("error");
+      setApiError(error.message || "Could not connect to the cricket score service.");
+      setMatches([]);
     } finally {
       setRefreshing(false);
     }
@@ -76,7 +78,7 @@ function App() {
     return () => clearInterval(timer);
   }, []);
 
-  const match = matches[selected] || matches[0] || demo.matches[0];
+  const match = matches[selected] || matches[0] || { id: "no-match", name: "Live scores unavailable", teams: [], score: [], status: apiError || "Waiting for match data" };
   const teamA = match.teams?.[0] || "Team A";
   const teamB = match.teams?.[1] || "Team B";
   const scoreA = match.score?.[0];
@@ -84,8 +86,8 @@ function App() {
   const currentScore = scoreA || scoreB;
   const inningsOver = currentScore?.o ?? 44;
   const runRate = currentScore && currentScore.o ? (currentScore.r / currentScore.o).toFixed(2) : "5.86";
-  const isLive = match.isLive !== false;
-  const isDemo = source !== "cricketdata";
+  const isLive = match.isLive === true;
+  const isDemo = source === "demo";
   const overs = ["1", "2", "3", "4", "5", "6"];
   const ballResults = ["1", "0", "4", "1", "W", "2"];
   const titleStatus = match.status || "Match information updating";
@@ -131,6 +133,7 @@ function App() {
           <div className="over-timeline"><div className="over-heading"><span>LAST OVER</span><span className="over-number">43.6 <ChevronDown size={12}/></span></div><div className="balls">{ballResults.map((b,i)=><span key={i} className={`ball ${b==="W"?"ball-wicket":b==="4"?"ball-four":b==="0"?"ball-dot":""}`}>{b}</span>)}</div><div className="over-caption">8 RUNS <span>·</span> 1 WICKET</div></div>
           <div className="quick-stats"><div><span>RUN RATE</span><strong>{runRate}</strong></div><div><span>OVERS</span><strong>{inningsOver}.0</strong></div><div><span>REQUIRED</span><strong>7.00</strong></div></div>
         </div>
+        {apiError && <div className="demo-note"><CircleHelp size={13}/> {apiError}</div>}
         {isDemo && <div className="demo-note"><CircleHelp size={13}/> Preview data · Connect a CricketData API key in Vercel to show live provider scores.</div>}
       </section>
 
