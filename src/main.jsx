@@ -45,7 +45,7 @@ function App() {
       if (!response.ok) throw new Error(payload.error || "Could not load scores");
       if (!Array.isArray(payload.matches)) throw new Error("The score service returned an unexpected response.");
       setMatches(payload.matches);
-      setSource(payload.matches.length ? (payload.source || "opencricket") : "empty");
+      setSource(payload.matches.length ? (payload.source || "cricketdata") : "empty");
       setApiError(payload.matches.length ? "" : "CricketData has not returned any matches currently in progress.");
       setSelected((current) => Math.min(current, Math.max(0, payload.matches.length - 1)));
       setUpdated(new Date());
