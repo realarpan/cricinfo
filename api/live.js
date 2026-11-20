@@ -39,7 +39,7 @@ function normalizeMatch(match) {
     score,
     teamInfo: Array.isArray(match.teamInfo) ? match.teamInfo : [],
     series: asText(match.series),
-    isLive: match.matchStarted === true && match.matchEnded !== true && !completed,
+    isLive: (match.matchStarted === true || score.length > 0) && match.matchEnded !== true && !completed,
     matchStarted: match.matchStarted === true,
     matchEnded: match.matchEnded === true,
     source: "CricketData"
@@ -90,7 +90,7 @@ export default async function handler(req, res) {
 
     const matches = payload.data
       .map(normalizeMatch)
-      .filter((match) => match.teams.length >= 2 && match.matchStarted && !match.matchEnded);
+      .filter((match) => match.teams.length >= 2 && (match.matchStarted || match.score.length > 0) && !match.matchEnded);
 
     return res.status(200).json({
       source: "cricketdata",
