@@ -1,53 +1,68 @@
-const API_URL = "https://api.cricapi.com/v1/currentMatches";
+const API_URL = "https://api.cricapi.com/v1/cricScore";
 
 function asText(value) {
   return typeof value === "string" ? value.trim() : "";
 }
 
-function normalizeScore(item) {
-  if (!item || typeof item !== "object") return null;
-  const runs = Number(item.r ?? item.runs);
-  const wickets = Number(item.w ?? item.wickets ?? 0);
-  const overs = Number(item.o ?? item.overs);
-  if (!Number.isFinite(runs)) return null;
+function splitTeam(value) {
+  const raw = asText(value);
+  const match = raw.match(/^(.*?)\\s*\\[([^\\]]+)\\]\\s*$/);
   return {
-    r: runs,
-    w: Number.isFinite(wickets) ? wickets : 0,
-    o: Number.isFinite(overs) ? overs : null,
-    inning: asText(item.inning || item.innings || item.team)
+    name: (match ? match[1] : raw).trim(),
+    shortname: match ? match[2].trim() : ""
   };
 }
 
-function normalizeMatch(match) {
-  const teams = Array.isArray(match.teams)
-    ? match.teams.map((team) => typeof team === "string" ? team : asText(team?.name)).filter(Boolean)
-    : [];
-  const score = (Array.isArray(match.score) ? match.score : [])
-    .map(normalizeScore)
-    .filter(Boolean);
-  const status = asText(match.status) || "Match status unavailable";
-  const completed = /\b(won|draw|no result|abandoned|cancelled|canceled|completed|match over)\b/i.test(status);
+function parseFormattedScore(value, teamName) {
+  const text = asText(value);
+  const match = text.match(/(\\d+)\\s*\\/\\s*(\\d+)\\s*\\((\\d+(?:\\.\\d+)?)\\s*(?:ov(?:ers?)?)?\\)/i);
+  if (!match) return null;
+  return {
+    r: Number(match[1]),
+    w: Number(match[2]),
+    o: Number(match[3]),
+    inning: teamName ? teamName + " Inning" : ""
+  };
+}
+
+function normalizeMatch(item) {
+  const first = splitTeam(item.t1);
+  const second = splitTeam(item.t2);
+  if (!first.name || !second.name) return null;
+
+  const score = [
+    parseFormattedScore(item.t1s, first.name),
+    parseFormattedScore(item.t2s, second.name)
+  ].filter(Boolean);
+
+  const state = asText(item.ms).toLowerCase();
+  const status = asText(item.status) || (state === "live" ? "Live" : "Match status unavailable");
 
   return {
-    id: String(match.id || match.name || crypto.randomUUID()),
-    name: asText(match.name) || (teams.length >= 2 ? teams.join(" vs ") : "Cricket match"),
-    matchType: asText(match.matchType || match.match_type || match.type) || "match",
+    id: asText(item.id) || [first.name, second.name, asText(item.dateTimeGMT)].join("-"),
+    name: first.name + " vs " + second.name,
+    matchType: asText(item.matchType) || "match",
     status,
-    venue: asText(match.venue),
-    date: asText(match.dateTimeGMT || match.date),
-    teams,
+    venue: asText(item.venue),
+    date: asText(item.dateTimeGMT || item.date),
+    teams: [first.name, second.name],
     score,
-    teamInfo: Array.isArray(match.teamInfo) ? match.teamInfo : [],
-    series: asText(match.series),
-    isLive: (match.matchStarted === true || score.length > 0) && match.matchEnded !== true && !completed,
-    matchStarted: match.matchStarted === true,
-    matchEnded: match.matchEnded === true,
+    teamInfo: [
+      { name: first.name, shortname: first.shortname, img: asText(item.t1img) },
+      { name: second.name, shortname: second.shortname, img: asText(item.t2img) }
+    ],
+    series: asText(item.series),
+    isLive: state === "live",
+    matchStarted: state === "live",
+    matchEnded: state === "result",
     source: "CricketData"
   };
 }
 
 export default async function handler(req, res) {
-  res.setHeader("Cache-Control", "s-maxage=20, stale-while-revalidate=20");
+  // The free CricketData plan allows 100 requests per day. Cache at the edge
+  // to avoid exhausting the quota while still refreshing periodically.
+  res.setHeader("Cache-Control", "s-maxage=900, stale-while-revalidate=300");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
 
@@ -67,7 +82,6 @@ export default async function handler(req, res) {
   try {
     const url = new URL(API_URL);
     url.searchParams.set("apikey", key);
-    url.searchParams.set("offset", "0");
 
     const upstream = await fetch(url, {
       headers: { Accept: "application/json" },
@@ -79,18 +93,19 @@ export default async function handler(req, res) {
       const info = asText(payload.reason || payload.message || payload.error);
       const providerStatus = upstream.status || 502;
       return res.status(providerStatus === 429 ? 429 : 502).json({
-        error: info || "CricketData could not provide current matches.",
+        error: info || "CricketData could not provide live scores.",
         providerStatus
       });
     }
 
     if (!Array.isArray(payload.data)) {
-      return res.status(502).json({ error: "CricketData returned an unexpected current-matches response." });
+      return res.status(502).json({ error: "CricketData returned an unexpected live-score response." });
     }
 
     const matches = payload.data
+      .filter((item) => asText(item.ms).toLowerCase() === "live")
       .map(normalizeMatch)
-      .filter((match) => match.teams.length >= 2 && (match.matchStarted || match.score.length > 0) && !match.matchEnded);
+      .filter(Boolean);
 
     return res.status(200).json({
       source: "cricketdata",
