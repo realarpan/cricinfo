@@ -132,7 +132,7 @@ export default async function handler(req, res) {
     }
 
     const matches = records.map(normalizeMatch).filter((match) =>
-      match.teams.length >= 2 && match.score.length > 0
+      match.teams.length >= 2 && match.score.length > 0 && match.isLive
     );
 
     return res.status(200).json({
