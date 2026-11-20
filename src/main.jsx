@@ -19,11 +19,16 @@ function scoreText(score) {
 }
 function scoreForTeam(match, team, index) {
   const innings = Array.isArray(match.score) ? match.score : [];
-  const teamKey = String(team || "").toLowerCase();
-  const byInning = innings.find((entry) =>
-    entry.inning && teamKey && entry.inning.toLowerCase().includes(teamKey)
-  );
-  return byInning || innings[index] || null;
+  const teamKey = String(team || "").trim().toLowerCase();
+  const byInning = innings.find((entry) => {
+    const inningName = String(entry?.inning || "").toLowerCase();
+    return inningName && teamKey && inningName.includes(teamKey);
+  });
+
+  // If the provider labels innings, never assign another team's score by array position.
+  // Positional fallback is safe only for feeds that contain no innings/team labels.
+  const hasTeamLabels = innings.some((entry) => String(entry?.inning || "").trim());
+  return byInning || (!hasTeamLabels ? innings[index] || null : null);
 }
 function App() {
   const [matches, setMatches] = useState([]);
