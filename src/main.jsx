@@ -48,7 +48,7 @@ function App() {
       setSource(payload.matches.length ? (payload.source || "cricketdata") : "empty");
       setApiError(payload.matches.length ? "" : "CricketData has not returned any matches currently in progress.");
       setSelected((current) => Math.min(current, Math.max(0, payload.matches.length - 1)));
-      setUpdated(new Date());
+      setUpdated(payload.fetchedAt ? new Date(payload.fetchedAt) : new Date());
     } catch (error) {
       setSource("error");
       setApiError(error.message || "Could not connect to the cricket score service.");
@@ -59,7 +59,7 @@ function App() {
   }
   useEffect(() => {
     loadScores();
-    const timer = setInterval(loadScores, 30000);
+    const timer = setInterval(loadScores, 900000);
     return () => clearInterval(timer);
   }, []);
 
@@ -133,7 +133,7 @@ function App() {
         </section>
 
         <aside className="side-column">
-          <section className="side-card glass"><div className="side-heading"><div><span className="side-kicker">DATA QUALITY</span><h3>Live score source</h3></div><span className="side-icon"><ShieldCheck size={17}/></span></div><div className="insight-feature"><div className="insight-icon mint"><ShieldCheck size={17}/></div><div><strong>{source === "cricketdata" && matches.length ? "Live data received" : source === "error" || source === "empty" ? "No live data received" : "Connecting to provider"}</strong><p>The status reflects whether the provider has returned a live match.</p></div></div><div className="insight-footer"><span><span className="tiny-green"/> No generated score values</span><span>{refreshing ? "Refreshing" : "Auto refresh: 30s"}</span></div></section>
+          <section className="side-card glass"><div className="side-heading"><div><span className="side-kicker">DATA QUALITY</span><h3>Live score source</h3></div><span className="side-icon"><ShieldCheck size={17}/></span></div><div className="insight-feature"><div className="insight-icon mint"><ShieldCheck size={17}/></div><div><strong>{source === "cricketdata" && matches.length ? "Live data received" : source === "error" || source === "empty" ? "No live data received" : "Connecting to provider"}</strong><p>The status reflects whether the provider has returned a live match.</p></div></div><div className="insight-footer"><span><span className="tiny-green"/> No generated score values</span><span>{refreshing ? "Refreshing" : "Auto refresh: 15 min"}</span></div></section>
           <section className="side-card glass pitch-card"><div className="side-heading"><div><span className="side-kicker">PROVIDER</span><h3>Data attribution</h3></div><span className="side-icon"><Globe2 size={17}/></span></div><div className="pitch-legend"><div><strong>CricketData API</strong></div><p>Live score data is provided by CricketData. Availability and refresh frequency depend on the provider service.</p></div><div className="weather-line"><ShieldCheck size={15}/><span>API key protected server-side</span></div></section>
           <section className="side-card glass fixtures-card"><div className="side-heading"><div><span className="side-kicker">MATCH CENTRE</span><h3>Available matches</h3></div></div><div className="fixtures-list">{matches.length ? matches.map((item) => <div className="fixture" key={item.id}><div className="fixture-date"><strong>{item.matchType.toUpperCase()}</strong><span>{item.isLive ? "LIVE" : "MATCH"}</span></div><div className="fixture-info"><strong>{item.name}</strong><span>{item.status}</span></div><ChevronRight size={15}/></div>) : <div className="empty-data compact"><strong>No live matches right now</strong><span>CricketData has not returned a match currently in progress.</span></div>}</div></section>
         </aside>
