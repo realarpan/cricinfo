@@ -6,16 +6,20 @@ function asText(value) {
 
 function splitTeam(value) {
   const raw = asText(value);
-  const match = raw.match(/^(.*?)\\s*\\[([^\\]]+)\\]\\s*$/);
-  return {
-    name: (match ? match[1] : raw).trim(),
-    shortname: match ? match[2].trim() : ""
-  };
+  const open = raw.lastIndexOf("[");
+  const close = raw.lastIndexOf("]");
+  if (open >= 0 && close > open) {
+    return {
+      name: raw.slice(0, open).trim(),
+      shortname: raw.slice(open + 1, close).trim()
+    };
+  }
+  return { name: raw, shortname: "" };
 }
 
 function parseFormattedScore(value, teamName) {
   const text = asText(value);
-  const match = text.match(/(\\d+)\\s*\\/\\s*(\\d+)\\s*\\((\\d+(?:\\.\\d+)?)\\s*(?:ov(?:ers?)?)?\\)/i);
+  const match = text.match(/(\d+)\s*\/\s*(\d+)\s*\((\d+(?:\.\d+)?)\s*(?:ov(?:ers?)?)?\)/i);
   if (!match) return null;
   return {
     r: Number(match[1]),
@@ -60,8 +64,6 @@ function normalizeMatch(item) {
 }
 
 export default async function handler(req, res) {
-  // The free CricketData plan allows 100 requests per day. Cache at the edge
-  // to avoid exhausting the quota while still refreshing periodically.
   res.setHeader("Cache-Control", "s-maxage=900, stale-while-revalidate=300");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
@@ -85,7 +87,7 @@ export default async function handler(req, res) {
 
     const upstream = await fetch(url, {
       headers: { Accept: "application/json" },
-      signal: AbortSignal.timeout(12000)
+      signal: AbortSignal.timeout(8000)
     });
     const payload = await upstream.json().catch(() => ({}));
 
@@ -117,9 +119,10 @@ export default async function handler(req, res) {
       } : undefined
     });
   } catch (error) {
-    return res.status(502).json({
-      error: error?.name === "TimeoutError"
-        ? "CricketData took too long to respond. Please try again shortly."
+    const timedOut = error?.name === "TimeoutError" || error?.name === "AbortError";
+    return res.status(timedOut ? 504 : 502).json({
+      error: timedOut
+        ? "CricketData timed out. Please try again shortly."
         : "Could not reach CricketData. Please try again shortly."
     });
   }
