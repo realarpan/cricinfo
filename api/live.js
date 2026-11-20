@@ -1,75 +1,45 @@
-const API_BASE = "https://opencricketapi.com/v1";
+const API_URL = "https://api.cricapi.com/v1/currentMatches";
 
-function firstString(...values) {
+function textValue(...values) {
   return values.find((value) => typeof value === "string" && value.trim()) || "";
 }
 
-function teamName(team) {
-  if (typeof team === "string") return team;
-  if (!team || typeof team !== "object") return "";
-  return firstString(team.name, team.team_name, team.full_name, team.short_name, team.shortname);
-}
-
-function normalizeScore(item) {
-  if (!item || typeof item !== "object") return null;
-  const runs = Number(item.runs ?? item.r ?? item.total_runs);
-  const wickets = Number(item.wickets ?? item.w ?? item.total_wickets ?? 0);
-  const oversValue = item.overs ?? item.o ?? item.overs_completed;
-  const overs = typeof oversValue === "string" ? Number.parseFloat(oversValue) : Number(oversValue);
-  if (!Number.isFinite(runs)) return null;
-  return {
-    r: runs,
-    w: Number.isFinite(wickets) ? wickets : 0,
-    o: Number.isFinite(overs) ? overs : null
-  };
-}
-
 function normalizeMatch(match) {
-  const rawTeams = Array.isArray(match.teams) ? match.teams : [];
-  const teams = rawTeams.map(teamName).filter(Boolean);
-  const innings = Array.isArray(match.innings) ? match.innings : [];
-  const rawScores = Array.isArray(match.score) ? match.score : innings;
-  const score = rawScores.map(normalizeScore).filter(Boolean);
-  const competition = match.competition;
-  const series = firstString(
-    match.series,
-    typeof competition === "string" ? competition : competition?.name,
-    match.tournament?.name
-  );
-  const name = firstString(
-    match.name,
-    match.title,
-    match.match_name,
-    teams.length >= 2 ? `${teams[0]} vs ${teams[1]}` : ""
-  ) || "Cricket match";
-  const status = firstString(match.status, match.state, match.status_text, match.result);
-  const statusText = status || "Match status unavailable";
-  const teamInfo = rawTeams.map((team) => ({
-    name: teamName(team),
-    shortname: typeof team === "object" && team
-      ? firstString(team.short_name, team.shortname, team.abbreviation)
-      : ""
-  }));
-  const live = match.is_live === true || match.live === true ||
-    /live|in progress|innings break|stumps|day\s+[1-5]/i.test(statusText);
+  const teams = Array.isArray(match.teams) ? match.teams.filter((team) => typeof team === "string") : [];
+  const scores = Array.isArray(match.score) ? match.score : [];
+  const score = scores.map((item) => {
+    const runs = Number(item?.r);
+    const wickets = Number(item?.w ?? 0);
+    const overs = Number(item?.o);
+    if (!Number.isFinite(runs)) return null;
+    return {
+      r: runs,
+      w: Number.isFinite(wickets) ? wickets : 0,
+      o: Number.isFinite(overs) ? overs : null,
+      inning: textValue(item?.inning)
+    };
+  }).filter(Boolean);
+
+  const status = textValue(match.status, match.state) || "Match status unavailable";
+  const completed = /\b(won|draw|no result|abandoned|cancelled|completed|complete|match over)\b/i.test(status);
+
   return {
-    id: String(match.id ?? match.match_id ?? match.matchId ?? name),
-    name,
-    matchType: firstString(match.match_type, match.matchType, match.format, match.type) || "match",
-    status: statusText,
-    venue: firstString(match.venue, match.ground, match.venue_name),
-    date: firstString(match.date, match.start_date, match.startTime, match.start_time),
+    id: String(match.id || match.name || ""),
+    name: textValue(match.name) || (teams.length >= 2 ? `${teams[0]} vs ${teams[1]}` : "Cricket match"),
+    matchType: textValue(match.matchType, match.match_type) || "match",
+    status,
+    venue: textValue(match.venue) || "Venue unavailable",
+    date: textValue(match.dateTimeGMT, match.date),
     teams,
     score,
-    teamInfo,
-    series,
-    isLive: live,
-    source: firstString(match.source, match.data_source) || "OpenCricket"
+    teamInfo: Array.isArray(match.teamInfo) ? match.teamInfo : [],
+    series: textValue(match.series),
+    isLive: !completed && score.length > 0
   };
 }
 
 export default async function handler(req, res) {
-  res.setHeader("Cache-Control", "s-maxage=15, stale-while-revalidate=15");
+  res.setHeader("Cache-Control", "s-maxage=20, stale-while-revalidate=20");
   res.setHeader("Access-Control-Allow-Origin", "*");
   res.setHeader("Access-Control-Allow-Methods", "GET, OPTIONS");
   res.setHeader("Access-Control-Allow-Headers", "Content-Type");
@@ -80,72 +50,62 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: "Method not allowed." });
   }
 
-  const key = process.env.OPENCRICKET_API_KEY;
+  const key = process.env.CRICKET_API_KEY;
   if (!key) {
     return res.status(503).json({
-      error: "OpenCricket is not configured. Add OPENCRICKET_API_KEY to the Vercel Production environment and redeploy."
+      error: "CricketData is not configured. Add CRICKET_API_KEY to the Vercel Production environment and redeploy."
     });
   }
 
   try {
-    const upstream = await fetch(`${API_BASE}/matches?status=live`, {
-      method: "GET",
-      headers: {
-        Authorization: `Bearer ${key}`,
-        Accept: "application/json"
-      },
+    const url = new URL(API_URL);
+    url.searchParams.set("apikey", key);
+    url.searchParams.set("offset", "0");
+
+    const upstream = await fetch(url.toString(), {
+      headers: { Accept: "application/json" },
       signal: AbortSignal.timeout(12000)
     });
-
     const payload = await upstream.json().catch(() => ({}));
+
     if (!upstream.ok) {
-      const detail = firstString(payload.message, payload.error, payload.detail, payload.reason);
-      const message = upstream.status === 401 || upstream.status === 403
-        ? "OpenCricket rejected the key or this endpoint is not enabled for the current plan."
-        : upstream.status === 429
-          ? "OpenCricket request quota or rate limit reached."
-          : detail || `OpenCricket returned HTTP ${upstream.status}.`;
-      return res.status(upstream.status === 429 ? 429 : 502).json({
-        error: message,
-        providerStatus: upstream.status
-      });
-    }
-
-    if (payload.error || payload.success === false) {
+      const status = Number(upstream.status);
       return res.status(502).json({
-        error: firstString(payload.message, payload.error, payload.detail) || "OpenCricket returned an API error."
+        error: status === 429
+          ? "CricketData daily request limit has been reached."
+          : status === 401 || status === 403
+            ? "CricketData rejected the configured API key or account access."
+            : `CricketData returned HTTP ${status}.`,
+        providerStatus: status
       });
     }
 
-    const records = Array.isArray(payload.data)
-      ? payload.data
-      : Array.isArray(payload.matches)
-        ? payload.matches
-        : Array.isArray(payload.results)
-          ? payload.results
-          : null;
-
-    if (!records) {
+    if (payload.status !== "success" || !Array.isArray(payload.data)) {
+      const reason = textValue(payload.reason, payload.message, payload.info?.status);
       return res.status(502).json({
-        error: "OpenCricket responded, but its match-list format was not recognised."
+        error: reason || "CricketData returned an unexpected response."
       });
     }
 
-    const matches = records.map(normalizeMatch).filter((match) =>
-      match.teams.length >= 2 && match.score.length > 0 && match.isLive
-    );
+    const matches = payload.data
+      .map(normalizeMatch)
+      .filter((match) => match.teams.length >= 2 && match.score.length > 0 && match.isLive);
 
     return res.status(200).json({
-      source: "opencricket",
+      source: "cricketdata",
       matches,
-      fetchedAt: new Date().toISOString()
+      fetchedAt: new Date().toISOString(),
+      usage: payload.info ? {
+        hitsToday: payload.info.hitsToday,
+        hitsLimit: payload.info.hitsLimit
+      } : undefined
     });
   } catch (error) {
     const timedOut = error?.name === "TimeoutError" || error?.name === "AbortError";
     return res.status(502).json({
       error: timedOut
-        ? "OpenCricket took too long to respond. Please refresh shortly."
-        : "Could not reach OpenCricket. Please try again shortly."
+        ? "CricketData took too long to respond. Please try again shortly."
+        : "Could not reach CricketData. Please try again shortly."
     });
   }
 }
