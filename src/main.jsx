@@ -9,29 +9,6 @@ import {
 } from "lucide-react";
 import "./styles.css";
 
-const demo = {
-  source: "demo",
-  matches: [{
-    id: "demo-ind-aus", name: "India vs Australia, 2nd ODI", matchType: "odi",
-    status: "India need 42 runs from 36 balls", venue: "Narendra Modi Stadium, Ahmedabad",
-    teams: ["India", "Australia"], score: [{ r: 258, w: 5, o: 44 }, { r: 301, w: 8, o: 50 }],
-    teamInfo: [{ shortname: "IND" }, { shortname: "AUS" }], isLive: true,
-    series: "Australia tour of India"
-  }]
-};
-const fallbackCommentary = [
-  { over: "44.0", text: "A quiet start to the over. The field is spread and the asking rate is climbing.", runs: "0", kind: "dot" },
-  { over: "43.5", text: "FOUR! Driven firmly through extra cover. Excellent placement into the gap.", runs: "4", kind: "four" },
-  { over: "43.4", text: "Single taken to deep mid-wicket. Keeps the strike rotating.", runs: "1", kind: "run" },
-  { over: "43.3", text: "A slower delivery outside off, safely defended into the off side.", runs: "0", kind: "dot" },
-  { over: "43.2", text: "Two runs. Good running between the wickets.", runs: "2", kind: "run" },
-  { over: "43.1", text: "WIDE. Sprayed down the leg side. Extra run added.", runs: "Wd", kind: "wide" }
-];
-const fixtures = [
-  { day: "TODAY", date: "20 Nov", teams: "South Africa vs England", format: "1st T20I", time: "6:30 PM" },
-  { day: "SAT, 22 NOV", date: "22 Nov", teams: "India vs Australia", format: "3rd ODI", time: "1:30 PM" },
-  { day: "SUN, 23 NOV", date: "23 Nov", teams: "New Zealand vs Sri Lanka", format: "2nd Test", time: "3:30 AM" }
-];
 
 function shortName(match, i) {
   return match.teamInfo?.[i]?.shortname || match.teams?.[i]?.split(" ").map(x => x[0]).join("").slice(0, 3).toUpperCase() || ["T1", "T2"][i];
@@ -41,7 +18,7 @@ function scoreText(score) {
   return `${score.r}/${score.w}`;
 }
 function App() {
-  const [matches, setMatches] = useState(demo.matches);
+  const [matches, setMatches] = useState([]);
   const [source, setSource] = useState("loading");
   const [apiError, setApiError] = useState("");
   const [selected, setSelected] = useState(0);
@@ -84,14 +61,10 @@ function App() {
   const scoreA = match.score?.[0];
   const scoreB = match.score?.[1];
   const currentScore = scoreA || scoreB;
-  const inningsOver = currentScore?.o ?? 44;
-  const runRate = currentScore && currentScore.o ? (currentScore.r / currentScore.o).toFixed(2) : "5.86";
+  const inningsOver = currentScore?.o;
+  const runRate = currentScore && Number.isFinite(currentScore.o) && currentScore.o > 0 ? (currentScore.r / currentScore.o).toFixed(2) : "—";
   const isLive = match.isLive === true;
-  const isDemo = source === "demo";
-  const overs = ["1", "2", "3", "4", "5", "6"];
-  const ballResults = ["1", "0", "4", "1", "W", "2"];
-  const titleStatus = match.status || "Match information updating";
-  const commentary = fallbackCommentary;
+  const titleStatus = match.status || apiError || "Waiting for live match data";
 
   return <div className={dark ? "app dark" : "app"}>
     <div className="ambient ambient-blue" /><div className="ambient ambient-mint" />
@@ -129,12 +102,12 @@ function App() {
         </div>
         <div className="match-status"><span className="status-icon"><Radio size={14}/></span><span>{titleStatus}</span><span className="status-divider"/> <span className="venue"><Globe2 size={13}/>{match.venue || "Venue to be confirmed"}</span></div>
         <div className="hero-bottom">
-          <div className="probability"><div className="prob-title"><Target size={15}/> WIN PROBABILITY <span className="info-dot">i</span></div><div className="prob-row"><span className="prob-team">IND</span><div className="prob-track"><span style={{width:"64%"}}/></div><strong>64%</strong></div><div className="prob-row"><span className="prob-team">AUS</span><div className="prob-track prob-track-alt"><span style={{width:"36%"}}/></div><strong>36%</strong></div></div>
-          <div className="over-timeline"><div className="over-heading"><span>LAST OVER</span><span className="over-number">43.6 <ChevronDown size={12}/></span></div><div className="balls">{ballResults.map((b,i)=><span key={i} className={`ball ${b==="W"?"ball-wicket":b==="4"?"ball-four":b==="0"?"ball-dot":""}`}>{b}</span>)}</div><div className="over-caption">8 RUNS <span>·</span> 1 WICKET</div></div>
-          <div className="quick-stats"><div><span>RUN RATE</span><strong>{runRate}</strong></div><div><span>OVERS</span><strong>{inningsOver}.0</strong></div><div><span>REQUIRED</span><strong>7.00</strong></div></div>
+          <div className="probability"><div className="prob-title"><ShieldCheck size={15}/> VERIFIED SCORE FEED</div><div className="prob-row"><span className="prob-team">SOURCE</span><strong>{source === "opencricket" ? "OpenCricket" : source === "error" ? "Unavailable" : "Connecting"}</strong></div><div className="prob-row"><span className="prob-team">MODE</span><strong>Live scores</strong></div></div>
+          <div className="over-timeline"><div className="over-heading"><span>LIVE FEED</span><span className="over-number">{isLive ? "ACTIVE" : "STATUS"}</span></div><div className="over-caption">{isLive ? "Live match data" : "No fabricated ball events"}</div></div>
+          <div className="quick-stats"><div><span>RUN RATE</span><strong>{runRate}</strong></div><div><span>OVERS</span><strong>{inningsOver == null ? "—" : inningsOver}</strong></div><div><span>FEED</span><strong>{source === "opencricket" ? "LIVE" : "—"}</strong></div></div>
         </div>
         {apiError && <div className="demo-note"><CircleHelp size={13}/> {apiError}</div>}
-        {isDemo && <div className="demo-note"><CircleHelp size={13}/> Preview data · Connect a CricketData API key in Vercel to show live provider scores.</div>}
+
       </section>
 
       <div className="content-grid">
@@ -145,19 +118,19 @@ function App() {
             <button className={tab==="wickets"?"active":""} onClick={()=>setTab("wickets")}><Zap size={15}/> Fall of wickets</button>
           </div>
           <div className="panel glass">
-            {tab==="commentary" && <><div className="panel-header"><div><h2>Ball-by-ball</h2><p>Live match commentary and key moments</p></div><button className="filter-button">All events <ChevronDown size={14}/></button></div><div className="innings-strip"><span>2ND INNINGS</span><strong>{teamA}</strong><span className="innings-score">{scoreA ? scoreText(scoreA) : "Yet to bat"}</span></div><div className="commentary-list">{commentary.map((item,i)=><div className="commentary-item" key={item.over}><span className="commentary-over">{item.over}</span><span className={`event-ball ${item.kind}`}>{item.runs}</span><p>{item.text}</p>{i===1&&<span className="highlight-tag">BOUNDARY</span>}</div>)}</div><button className="load-more">Load earlier commentary <ChevronDown size={14}/></button></>}
-            {tab==="scorecard" && <><div className="panel-header"><div><h2>Full scorecard</h2><p>Batting and bowling figures</p></div><span className="innings-chip">INNINGS 2</span></div><div className="scorecard-title">{teamA} batting <span>{scoreA ? scoreText(scoreA) : "—"}</span></div><div className="score-table"><div className="score-table-head"><span>BATTER</span><span>R</span><span>B</span><span>4s</span><span>6s</span><span>SR</span></div>{["R Sharma","S Gill","V Kohli","S Iyer","KL Rahul"].map((n,i)=><div className="score-table-row" key={n}><span><b>{n}</b><small>{["c Smith b Starc","lbw b Hazlewood","not out","c Carey b Zampa","not out"][i]}</small></span><strong>{[72,38,64,21,42][i]}</strong><span>{[81,44,71,25,38][i]}</span><span>{[6,4,5,2,3][i]}</span><span>{[1,0,2,0,1][i]}</span><span>{[88.89,86.36,90.14,84,110.52][i]}</span></div>)}</div><div className="scorecard-title bowling-title">Australia bowling</div><div className="score-table"><div className="score-table-head"><span>BOWLER</span><span>O</span><span>M</span><span>R</span><span>W</span><span>ECON</span></div>{["M Starc","P Cummins","J Hazlewood"].map((n,i)=><div className="score-table-row" key={n}><span><b>{n}</b><small>Left arm fast</small></span><span>{[9,8,9][i]}</span><span>0</span><span>{[52,41,48][i]}</span><strong>{[2,1,1][i]}</strong><span>{[5.77,5.12,5.33][i]}</span></div>)}</div><div className="demo-footnote">Illustrative scorecard preview. Provider scorecard integration can be added when the API plan supports innings detail.</div></>}
-            {tab==="wickets" && <><div className="panel-header"><div><h2>Fall of wickets</h2><p>Key moments in the innings</p></div><span className="innings-chip">2ND INNINGS</span></div><div className="wicket-list">{[{w:1,r:34,o:"5.2",p:"R Sharma",t:"c Smith b Starc"},{w:2,r:91,o:"14.4",p:"S Gill",t:"lbw b Hazlewood"},{w:3,r:142,o:"25.1",p:"S Iyer",t:"c Carey b Zampa"},{w:4,r:201,o:"35.3",p:"H Pandya",t:"b Cummins"},{w:5,r:229,o:"40.2",p:"R Jadeja",t:"c Labuschagne b Starc"}].map(x=><div className="wicket-row" key={x.w}><div className="wicket-number">{x.w}</div><div className="wicket-info"><strong>{x.p}</strong><span>{x.t}</span></div><div className="wicket-score"><strong>{x.r}</strong><span>{x.o} ov</span></div></div>)}</div><div className="demo-footnote">Illustrative wicket timeline for the match-centre preview.</div></>}
+            {tab==="commentary" && <><div className="panel-header"><div><h2>Ball-by-ball</h2><p>Live match commentary and key moments</p></div><button className="filter-button">All events <ChevronDown size={14}/></button></div><div className="innings-strip"><span>2ND INNINGS</span><strong>{teamA}</strong><span className="innings-score">{scoreA ? scoreText(scoreA) : "Yet to bat"}</span></div><div className="empty-data"><Radio size={18}/><strong>Ball-by-ball commentary is not included in the live-score feed.</strong><span>This panel will only show delivery events when the provider supplies them. No sample commentary is presented as live.</span></div></>}
+            {tab==="scorecard" && <><div className="panel-header"><div><h2>Full scorecard</h2><p>Detailed batting and bowling data</p></div></div><div className="empty-data"><BarChart3 size={18}/><strong>Detailed scorecards are not available in this live-score response.</strong><span>Only score values returned by the provider are displayed above.</span></div></>}
+            {tab==="wickets" && <><div className="panel-header"><div><h2>Fall of wickets</h2><p>Wicket events from the match</p></div></div><div className="empty-data"><Zap size={18}/><strong>Wicket timeline is not present in the current live-score feed.</strong><span>No illustrative wicket events are shown.</span></div></>}
           </div>
         </section>
 
         <aside className="side-column">
-          <section className="side-card glass"><div className="side-heading"><div><span className="side-kicker">THE NUMBERS</span><h3>Match insights</h3></div><span className="side-icon"><Gauge size={17}/></span></div><div className="insight-feature"><div className="insight-icon mint"><TrendingIcon/></div><div><strong>Chase is on track</strong><p>Required rate is within reach with wickets in hand.</p></div></div><div className="insight-stats"><div><span>REQUIRED RATE</span><strong>7.00 <small>RPO</small></strong></div><div><span>PROJECTED SCORE</span><strong>300 <small>runs</small></strong></div></div><div className="insight-footer"><span><span className="tiny-green"/> Based on current run rate</span><span>Updated now</span></div></section>
-          <section className="side-card glass pitch-card"><div className="side-heading"><div><span className="side-kicker">GROUND CONDITIONS</span><h3>Pitch report</h3></div><span className="side-icon"><Waves size={17}/></span></div><div className="pitch-content"><div className="donut"><div className="donut-inner"><strong>58%</strong><span>PACE</span></div></div><div className="pitch-legend"><div><span className="legend-dot pace"/>Pace friendly <strong>58%</strong></div><div><span className="legend-dot spin"/>Spin friendly <strong>42%</strong></div><p>Good carry early on, with some grip for spinners as the match progresses.</p></div></div><div className="weather-line"><CloudSun size={15}/><span>Ahmedabad</span><strong>29°C</strong><span>·</span><span>Clear skies</span></div></section>
-          <section className="side-card glass fixtures-card"><div className="side-heading"><div><span className="side-kicker">WHAT'S NEXT</span><h3>Upcoming fixtures</h3></div><button className="text-link">View all <ArrowUpRight size={13}/></button></div><div className="fixtures-list">{fixtures.map((f,i)=><div className="fixture" key={f.teams}><div className="fixture-date"><strong>{f.date}</strong><span>{f.day}</span></div><div className="fixture-info"><strong>{f.teams}</strong><span>{f.format} <i>·</i> {f.time}</span></div><ChevronRight size={15}/></div>)}</div></section>
+          <section className="side-card glass"><div className="side-heading"><div><span className="side-kicker">DATA QUALITY</span><h3>Live score source</h3></div><span className="side-icon"><ShieldCheck size={17}/></span></div><div className="insight-feature"><div className="insight-icon mint"><ShieldCheck size={17}/></div><div><strong>{source === "opencricket" ? "Connected to OpenCricket" : source === "error" ? "Feed unavailable" : "Connecting to provider"}</strong><p>Scores shown here come from the configured provider response.</p></div></div><div className="insight-footer"><span><span className="tiny-green"/> No generated score values</span><span>{refreshing ? "Refreshing" : "Auto refresh: 30s"}</span></div></section>
+          <section className="side-card glass pitch-card"><div className="side-heading"><div><span className="side-kicker">PROVIDER</span><h3>Data attribution</h3></div><span className="side-icon"><Globe2 size={17}/></span></div><div className="pitch-legend"><div><strong>OpenCricket API</strong></div><p>Live score data is provided by OpenCricket. Availability and refresh frequency depend on the provider service.</p></div><div className="weather-line"><ShieldCheck size={15}/><span>API key protected server-side</span></div></section>
+          <section className="side-card glass fixtures-card"><div className="side-heading"><div><span className="side-kicker">MATCH CENTRE</span><h3>Available matches</h3></div></div><div className="fixtures-list">{matches.length ? matches.map((item) => <div className="fixture" key={item.id}><div className="fixture-date"><strong>{item.matchType.toUpperCase()}</strong><span>{item.isLive ? "LIVE" : "MATCH"}</span></div><div className="fixture-info"><strong>{item.name}</strong><span>{item.status}</span></div><ChevronRight size={15}/></div>) : <div className="empty-data compact"><strong>No matches returned</strong><span>There are currently no matches in the provider response.</span></div>}</div></section>
         </aside>
       </div>
-      <footer className="footer"><a className="brand footer-brand" href="#"><span className="brand-mark"><Activity size={15}/></span><span>stump<span className="brand-light">stream</span></span></a><span>Made for the love of the game.</span><div><a href="https://cricketdata.org/" target="_blank" rel="noreferrer">Data provider <ExternalLink size={11}/></a><span>© 2026 StumpStream</span></div></footer>
+      <footer className="footer"><a className="brand footer-brand" href="#"><span className="brand-mark"><Activity size={15}/></span><span>stump<span className="brand-light">stream</span></span></a><span>Made for the love of the game.</span><div><a href="https://opencricketapi.com/" target="_blank" rel="noreferrer">OpenCricket data <ExternalLink size={11}/></a><span>© 2026 StumpStream</span></div></footer>
     </main>
   </div>;
 }
