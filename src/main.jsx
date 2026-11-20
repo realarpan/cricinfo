@@ -113,12 +113,12 @@ function App() {
       <div className="content-grid">
         <section className="main-column">
           <div className="tabs glass">
-            <button className={tab==="commentary"?"active":""} onClick={()=>setTab("commentary")}><Radio size={15}/> Commentary <span className="tab-live">LIVE</span></button>
+            <button className={tab==="commentary"?"active":""} onClick={()=>setTab("commentary")}><Radio size={15}/> Commentary <span className="tab-live">FEED</span></button>
             <button className={tab==="scorecard"?"active":""} onClick={()=>setTab("scorecard")}><BarChart3 size={15}/> Full scorecard</button>
             <button className={tab==="wickets"?"active":""} onClick={()=>setTab("wickets")}><Zap size={15}/> Fall of wickets</button>
           </div>
           <div className="panel glass">
-            {tab==="commentary" && <><div className="panel-header"><div><h2>Ball-by-ball</h2><p>Live match commentary and key moments</p></div><button className="filter-button">All events <ChevronDown size={14}/></button></div><div className="innings-strip"><span>2ND INNINGS</span><strong>{teamA}</strong><span className="innings-score">{scoreA ? scoreText(scoreA) : "Yet to bat"}</span></div><div className="empty-data"><Radio size={18}/><strong>Ball-by-ball commentary is not included in the live-score feed.</strong><span>This panel will only show delivery events when the provider supplies them. No sample commentary is presented as live.</span></div></>}
+            {tab==="commentary" && <><div className="panel-header"><div><h2>Ball-by-ball</h2><p>Commentary data supplied by the provider</p></div><button className="filter-button">All events <ChevronDown size={14}/></button></div><div className="innings-strip"><span>2ND INNINGS</span><strong>{teamA}</strong><span className="innings-score">{scoreA ? scoreText(scoreA) : "Yet to bat"}</span></div><div className="empty-data"><Radio size={18}/><strong>Ball-by-ball commentary is not included in the live-score feed.</strong><span>This panel will only show delivery events when the provider supplies them. No sample commentary is presented as live.</span></div></>}
             {tab==="scorecard" && <><div className="panel-header"><div><h2>Full scorecard</h2><p>Detailed batting and bowling data</p></div></div><div className="empty-data"><BarChart3 size={18}/><strong>Detailed scorecards are not available in this live-score response.</strong><span>Only score values returned by the provider are displayed above.</span></div></>}
             {tab==="wickets" && <><div className="panel-header"><div><h2>Fall of wickets</h2><p>Wicket events from the match</p></div></div><div className="empty-data"><Zap size={18}/><strong>Wicket timeline is not present in the current live-score feed.</strong><span>No illustrative wicket events are shown.</span></div></>}
           </div>
